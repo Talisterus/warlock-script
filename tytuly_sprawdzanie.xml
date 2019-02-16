@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<AliasPackage>
+		<Alias isActive="yes" isFolder="no">
+			<name>sprawdzenie tytulow</name>
+			<script>--alias ujawnia na chwile wszystkie tytuly, sprawdza jakie tytuly aktualnie mamy i ponownie je ukrywa
+send("tytul pokaz zawodowy")
+send("tytul pokaz polzawodowy")
+send("tytul pokaz rasowy")
+send("tytul pokaz dodatkowy")
+send("kto")
+send("tytul ukryj zawodowy")
+send("tytul ukryj polzawodowy")
+send("tytul ukryj rasowy")
+send("tytul ukryj dodatkowy")</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^tyt$</regex>
+		</Alias>
+	</AliasPackage>
+</MudletPackage>
