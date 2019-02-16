@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<AliasPackage>
+		<Alias isActive="yes" isFolder="no">
+			<name>wymiana monet</name>
+			<script>send("wymien miedziane na srebrne")
+send("wymien srebrne na zlote")</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^wym$</regex>
+		</Alias>
+	</AliasPackage>
+</MudletPackage>
