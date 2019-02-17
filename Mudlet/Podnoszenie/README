@@ -1,0 +1,11 @@
+Skrypt, trigger i alias dzialają tak, że po komendzie 'wez przedmioty z cial' nastąpi policzenie ciał za pomocą komendy
+'wykonaj policz ciala' a nastepnie nastąpi wzięcie przedmiotu lub przedmiotów z tylu ciał ile jest na lokacji.
+Czyli np.:
+
+wez wszystko z cial
+wykonaj policz ciala
+Wykonuje: policz ciala
+Wykonywanie sekwencji zakonczone.
+Doliczyles sie dwoch sztuk.
+wez wszystko z pierwszego ciala
+wez wszystko z drugiego ciala
