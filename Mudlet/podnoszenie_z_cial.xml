@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<ScriptPackage>
+		<Script isActive="yes" isFolder="no">
+			<name>podnoszenie_z_cial</name>
+			<packageName></packageName>
+			<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+function podnoszenie_z_cial()
+	
+z_ktorego_ciala_slownie = {
+"pierwszego",
+"drugiego",
+"trzeciego",
+"czwartego",
+"piatego",
+"szostego",
+"siodmego",
+"osmego",
+"dziewiatego",
+"dziesiatego"
+}	
+
+	for i = 1, policzone_sztuki
+	do
+	
+	send("wez "..rzecz_do_podniesienia.." z ".. z_ktorego_ciala_slownie[i] .. " ciala")
+	
+	end
+
+end</script>
+			<eventHandlerList />
+		</Script>
+	</ScriptPackage>
+</MudletPackage>
