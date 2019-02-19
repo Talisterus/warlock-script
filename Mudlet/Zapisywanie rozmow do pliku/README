@@ -1,0 +1,3 @@
+Zapisywanie rozmów do pliku wyłapuje cały tekst triggerem i uruchamia skrypt z pliku zapisz_do_pliku_rozmowy.
+
+Skrypt dodaje tekst do pliku w głównym katalogu Mudlet lub tworzy nowy plik jeśli nie istnieje żaden poprzedni.
