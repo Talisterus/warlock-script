@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<ScriptPackage>
+		<Script isActive="yes" isFolder="no">
+			<name>zapisz_do_pliku_rozmowy</name>
+			<packageName></packageName>
+			<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+function zapisz_do_pliku_rozmowy(text)
+	-- Opens a file in append mode
+	file = io.open("rozmowy.txt", "a")
+
+	-- appends a word test to the last line of the file
+	file:write(text.."\n")
+
+	-- closes the open file
+	file:close()
+
+end --zapisz_do_pliku_rozmowy</script>
+			<eventHandlerList />
+		</Script>
+	</ScriptPackage>
+</MudletPackage>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<TriggerPackage>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>Zapisz rozmowy do pliku</name>
+			<script>zapisz_do_pliku_rozmowy("[" .. getTime(true, "HH:mm") .. "]"..matches[1])</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>(.+) (mowi|dudni|szepce|spiewa|pomrukuje|piszczy|bulgocze|krzyczy|wrzeszczy|szepcze|mruczy|syczy|huczy|charczy|grzmi|nuci)()( do (.+)|): (.+)</string>
+				<string>(.+) (mowi|dudni|szepce|spiewa|pomrukuje|piszczy|bulgocze|krzyczy|wrzeszczy|szepcze|mruczy|syczy|huczy|charczy|grzmi|nuci)( .*?|)( do (.+)|): (.+)</string>
+				<string>^(Mowisz|Krzyczysz|Wrzeszczysz|Szepczesz)( .*?|)( do (.+)|): (.+)</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+			</regexCodePropertyList>
+		</Trigger>
+	</TriggerPackage>
+</MudletPackage>
