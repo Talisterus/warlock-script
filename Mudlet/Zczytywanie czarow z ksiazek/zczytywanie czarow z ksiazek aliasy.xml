@@ -4,7 +4,7 @@
 	<AliasPackage>
 		<AliasGroup isActive="yes" isFolder="yes">
 			<name>zczytywanie czarow z ksiazek</name>
-			<script></script>
+			<script>--wersja poprawiona </script>
 			<command></command>
 			<packageName></packageName>
 			<regex></regex>
@@ -23,7 +23,10 @@ end
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>czytaj czary z wszystkich ksiazek i zapisz</name>
-				<script></script>
+				<script>enableTrigger("Liczenie sztuk czegos")
+send("policz wszystkie ksiazki")
+rzeczy_liczone = "ksiazki"
+wszystkie_czary = {}</script>
 				<command></command>
 				<packageName></packageName>
 				<regex>^czytaj$</regex>
