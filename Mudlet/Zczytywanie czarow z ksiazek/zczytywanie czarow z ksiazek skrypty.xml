@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<ScriptPackage>
+		<ScriptGroup isActive="yes" isFolder="yes">
+			<name>zczytywanie_czarow_z_ksiazek</name>
+			<packageName></packageName>
+			<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+</script>
+			<eventHandlerList />
+			<Script isActive="yes" isFolder="no">
+				<name>czytanie_ksiazek_magicznych</name>
+				<packageName></packageName>
+				<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+function czytanie_ksiazek_magicznych()
+
+ktora_ksiazke_slownie = {
+"pierwsza",
+"druga",
+"trzecia",
+"czwarta",
+"piata",
+"szosta",
+"siodma",
+"osma",
+"dziewiata",
+"dziesiata"
+}
+
+komenda_do_wykonania = {}
+komenda_wykonaj = ""
+for i = 1, policzone_sztuki do
+
+	komenda_do_wykonania[i] = "otworz "..ktora_ksiazke_slownie[i].." ksiazke, przeczytaj "..ktora_ksiazke_slownie[i].." ksiazke, "
+
+	komenda_wykonaj =  komenda_wykonaj .."".. komenda_do_wykonania[i]
+	
+end --for
+
+	send("wykonaj "..komenda_wykonaj)
+
+end -- function
+
+function zapisz_czar_do_tabelki(nazwa_czaru)
+
+	
+	if wszystkie_czary == nil then
+	wszystkie_czary = {}
+	end
+	
+	--if wszystkie_czary[1] == nil then
+	--wszystkie_czary[1] = nazwa_ksiazki
+	--end --if
+	--wszystkie_czary = {}
+	
+	--wszystkie_czary[#wszystkie_czary + 1] = nazwa_czaru
+	wszystkie_czary[#wszystkie_czary + 1] = nazwa_czaru.." z "..nazwa_ksiazki
+
+		--echo(wszystkie_czary)
+	
+end --function</script>
+				<eventHandlerList />
+			</Script>
+		</ScriptGroup>
+	</ScriptPackage>
+</MudletPackage>
