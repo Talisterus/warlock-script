@@ -17,6 +17,58 @@
 			<colorTriggerBgColor>#000000</colorTriggerBgColor>
 			<regexCodeList />
 			<regexCodePropertyList />
+			<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Liczenie sztuk czegos</name>
+				<script>policzone_sztuki = matches[3]
+	
+policzone_sztuki_slownie = {
+"dwoch",
+ "trzech",
+  "czterech",
+	 "pieciu",
+	  "szesciu",
+		 "siedmiu",
+		  "osmiu",
+			 "dziewieciu",
+			  "dziesieciu"}
+
+	for k, v in pairs(policzone_sztuki_slownie) do
+	
+		if v == policzone_sztuki then
+			policzone_sztuki = k + 1
+		end
+	
+	
+	end
+
+
+--echo(policzone_sztuki)
+disableTrigger("Liczenie sztuk czegos")
+
+if rzeczy_liczone == "ciala" then
+podnoszenie_z_cial()
+end --if
+
+if rzeczy_liczone == "ksiazki" then
+czytanie_ksiazek_magicznych()
+end --if</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^Doliczyl(es|as) sie (.+) sztuk\.$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
 			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>wykonywanie sekwencji zakonczone</name>
 				<script>if rzeczy_liczone == "ksiazki" then
@@ -78,9 +130,25 @@ else
 token = token:sub(1, -2).."i"
 end --if
 
-
 --nazwa kogo/czego?
 nazwa_ksiazki = token
+
+
+--debug
+--echo("\n\n\n"..matches[5].."\n\n\n")
+local token2 = tostring(matches[5])
+
+if liczba_zapisanych_stron_czarow == nil then
+liczba_zapisanych_stron_czarow = 0
+end --if
+
+
+liczba_zapisanych_stron_czarow = liczba_zapisanych_stron_czarow + zamien_wyraz_na_cyfry(token2)
+
+
+
+
+
 
 
 --debug
