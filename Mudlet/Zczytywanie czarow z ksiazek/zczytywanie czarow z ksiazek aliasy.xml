@@ -12,11 +12,14 @@
 				<name>sprawdz zaklecia</name>
 				<script>for i =1, #wszystkie_czary do
 
-echo("mwypowiedz ".. wszystkie_czary[i].."\n")
+echo("["..i.."] mwypowiedz ".. wszystkie_czary[i].."\n")
 --cechoLink(wszystkie_czary[i].."\n", [[send("mwypowiedz ]]..wszystkie_czary[i]..[[)]], "mwypowiedz", false)
 
 end
-</script>
+liczba_zapisanych_stron_czarow_z_wszystkich_ksiazek =  liczba_zapisanych_stron_czarow
+echo("Ilosc zapisanych stron czarow to: ".. liczba_zapisanych_stron_czarow_z_wszystkich_ksiazek)
+
+--liczba_zapisanych_stron_czarow = nil</script>
 				<command></command>
 				<packageName></packageName>
 				<regex>^sprawdz$</regex>
@@ -26,10 +29,21 @@ end
 				<script>enableTrigger("Liczenie sztuk czegos")
 send("policz wszystkie ksiazki")
 rzeczy_liczone = "ksiazki"
-wszystkie_czary = {}</script>
+wszystkie_czary = {}
+liczba_zapisanych_stron_czarow = nil</script>
 				<command></command>
 				<packageName></packageName>
 				<regex>^czytaj$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>wyczaruj cos z listy wszystkich czarow</name>
+				<script>--echo(matches[2])
+local token = tonumber(matches[2])
+send("mwypowiedz "..wszystkie_czary[token])
+--echo("mwypowiedz ")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^czaruj (\d+)$</regex>
 			</Alias>
 		</AliasGroup>
 	</AliasPackage>
