@@ -69,6 +69,83 @@ function zapisz_czar_do_tabelki(nazwa_czaru)
 end --function</script>
 				<eventHandlerList />
 			</Script>
+			<Script isActive="yes" isFolder="no">
+				<name>Liczenie</name>
+				<packageName></packageName>
+				<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+function zamien_wyraz_na_cyfry(numer_slownie)
+
+local numer_cyfra = nil
+
+local dziesiatki = {
+"dwadziescia",
+"trzydziesci",
+"czterdziesci",
+"piecdziesiat",
+"szescdziesiat",
+"siedemdziesiat",
+"osiemdziesiat",
+"dziewiecdziesiat"
+}
+
+local jednosci = {
+"jeden",
+"dwa",
+"trzy",
+"cztery",
+"piec",
+"szesc",
+"siedem",
+"osiem",
+"dziewiec",
+"dziesiec",
+"jedeneacie",
+"dwanascie",
+"trzynascie",
+"czternascie",
+"pietnascie",
+"szesnascie",
+"siedemnascie",
+"osiemnascie",
+"dziewietnascie"
+}
+local setki = {
+"sto",
+"dwiescie",
+"trzysta",
+"czterysta",
+"piecset",
+"szescset",
+"siedemset",
+"osiemset",
+"dziewiecset"
+}
+
+for k, v in pairs(jednosci) do
+	if string.match(numer_slownie, v) then
+		numer_cyfra = k
+	end --if
+end --for
+for k, v in pairs(dziesiatki) do
+	if string.match(numer_slownie, v) then
+		numer_cyfra = numer_cyfra * 10 + 10
+	end --if
+end --for
+for k, v in pairs(setki) do
+	if string.match(numer_slownie, v) then
+		numer_cyfra = numer_cyfra * 100
+	end --if
+end --for
+
+return numer_cyfra
+
+end --function</script>
+				<eventHandlerList />
+			</Script>
 		</ScriptGroup>
 	</ScriptPackage>
 </MudletPackage>
