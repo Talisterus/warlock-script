@@ -115,7 +115,7 @@ end --if</script>
 					<integer>2</integer>
 				</regexCodePropertyList>
 			</Trigger>
-			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>wykrycie jaka ksiazke przeczytales ostatnio</name>
 				<script>--Opasly twardy grymuar zawiera szesnascie czarow, zajmujac piecdziesiat dziewiec stron zosiemdziesieciu trzech.
 
@@ -144,13 +144,10 @@ end --if
 
 
 liczba_zapisanych_stron_czarow = liczba_zapisanych_stron_czarow + zamien_wyraz_na_cyfry(token2)
-
-
-
-
-
-
-
+echo("\n")
+echo("Liczba czarow w tej ksiedze wynosi: ".. zamien_wyraz_na_cyfry(token2).."\n")
+--debug
+--liczba_zapisanych_stron_czarow = 0
 --debug
 --echo(nazwa_ksiazki)</script>
 				<triggerType>0</triggerType>
@@ -164,7 +161,7 @@ liczba_zapisanych_stron_czarow = liczba_zapisanych_stron_czarow + zamien_wyraz_n
 				<colorTriggerFgColor>#000000</colorTriggerFgColor>
 				<colorTriggerBgColor>#000000</colorTriggerBgColor>
 				<regexCodeList>
-					<string>^(.+) zawiera (.+) (czar|czary|czarow)\, zajmujac (.+) stro(n|y) z (.+)\.$</string>
+					<string>^(.+) zawiera (.+) (czar|czary|czarow)\, zajmujac (.+) stro(n|ny) z (.+)\.$</string>
 				</regexCodeList>
 				<regexCodePropertyList>
 					<integer>1</integer>
