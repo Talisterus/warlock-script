@@ -79,7 +79,15 @@ end --function</script>
 -------------------------------------------------
 function zamien_wyraz_na_cyfry(numer_slownie)
 
-local numer_cyfra = nil
+--rozbic input na poszczegolne wyrazy
+
+local t = {}
+
+for token in string.gmatch(numer_slownie, "[^%s]+") do
+	table.insert(t, token)
+end --for
+
+local numer_cyfra = 0
 
 local dziesiatki = {
 "dwadziescia",
@@ -103,7 +111,7 @@ local jednosci = {
 "osiem",
 "dziewiec",
 "dziesiec",
-"jedeneacie",
+"jedenascie",
 "dwanascie",
 "trzynascie",
 "czternascie",
@@ -125,21 +133,25 @@ local setki = {
 "dziewiecset"
 }
 
-for k, v in pairs(jednosci) do
-	if string.match(numer_slownie, v) then
-		numer_cyfra = k
-	end --if
+for x, y in pairs(t) do
+  for k, v in pairs(jednosci) do
+  	if t[x] == v then
+  		numer_cyfra = numer_cyfra + k
+  	end --if
+  end --for
+  for k, v in pairs(dziesiatki) do
+  	if t[x] == v then
+  		numer_cyfra = numer_cyfra + ((k * 10) + 10)
+  	end --if
+  end --for
+  for k, v in pairs(setki) do
+  	if t[x] == v then
+  		numer_cyfra = numer_cyfra + (v * 100)
+  	end --if
+  end --for
 end --for
-for k, v in pairs(dziesiatki) do
-	if string.match(numer_slownie, v) then
-		numer_cyfra = numer_cyfra * 10 + 10
-	end --if
-end --for
-for k, v in pairs(setki) do
-	if string.match(numer_slownie, v) then
-		numer_cyfra = numer_cyfra * 100
-	end --if
-end --for
+
+
 
 return numer_cyfra
 
