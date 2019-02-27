@@ -1,3 +1,4 @@
 Komenda 'czytaj' powoduje włączenie sekwencji zczytywania wszystkich książek w ekwipunku.
 Po zakończeniu sekwencji komenda 'sprawdz' spowoduje wypisanie na ekranie wszystkich czarów z książek.
+Komenda 'czaruj [x]' gdzie x to numer zaklecia z listy powoduje rzucenie tego czaru z ksiazki w której jest on zapisany.
 Dodatkowo skrypt zlicza wszystkie zapisane czarami strony ksiąg.
