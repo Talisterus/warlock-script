@@ -1,0 +1,3 @@
+Skrypt przeglada i numeruje przedmioty które są w pojemnikach na które działa trigger 'Widzisz [x] w [y]'
+Można użyć komend 'wez [numer] z [pojemnik]' i 'wloz [numer] do [pojemnik]' po wyswietleniu numerowanej listy rzeczy w pojemniku.
+Pierwszą komendą aktywującą ciąg zdarzeń jest 'l na [przedmioty] w [pojemniku]'
