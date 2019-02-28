@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<AliasPackage>
+		<AliasGroup isActive="yes" isFolder="yes">
+			<name>przedmioty w pojemnikach aliasy</name>
+			<script></script>
+			<command></command>
+			<packageName></packageName>
+			<regex></regex>
+			<Alias isActive="yes" isFolder="no">
+				<name>wloz cos do pojemnika wedlug numeru</name>
+				<script>local token = tonumber(matches[2])
+local token2 = tostring(matches[3])
+send("wloz "..global_t[token].." do "..token2)</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^wloz (\d+) do (.+)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>wez cos z pojemnika wedlug numeru</name>
+				<script>
+local token = tonumber(matches[2])
+local token2 = tostring(matches[3])
+send("wez "..global_t[token].." z "..token2)</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^wez (\d+) z (.+)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>spojrz na rzeczy w pojemniku</name>
+				<script>if rodzaj_rzeczy == nil then
+rodzaj_rzeczy = 0
+end
+
+local token = tostring(matches[2])
+local token2 = tostring(matches[3])
+
+if rodzaj_rzeczy ~= token then
+rodzaj_rzeczy = token
+global_t = {}
+send("spojrz na ".. token.. " w "..token2)
+tempTimer(0.5, [[wyswietl_liste_przedmiotow()]])
+else
+wyswietl_liste_przedmiotow()
+end</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^l na (.+) w (.+)$</regex>
+			</Alias>
+		</AliasGroup>
+	</AliasPackage>
+</MudletPackage>

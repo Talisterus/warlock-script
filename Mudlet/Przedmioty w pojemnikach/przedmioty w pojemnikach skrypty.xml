@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<ScriptPackage>
+		<ScriptGroup isActive="yes" isFolder="yes">
+			<name>przedmioty w pojemnikach skrypty</name>
+			<packageName></packageName>
+			<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+</script>
+			<eventHandlerList />
+			<Script isActive="yes" isFolder="no">
+				<name>dodaj_przedmiot_do_listy</name>
+				<packageName></packageName>
+				<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+function dodaj_przedmiot_do_listy(rzecz)
+
+if global_t == nil then
+global_t = {}
+end --if
+
+global_t[#global_t + 1] = rzecz
+--table.insert(global_t, rzecz)
+deleteLine()
+
+--for i = 1, #global_t do
+--echo("\n["..#global_t.."] "..global_t[#global_t].."\n")
+--end --for
+
+
+--global_t = {}
+end --function
+
+function wyswietl_liste_przedmiotow()
+
+for i = 1, #global_t do
+echo("["..i.."] "..global_t[i].."\n")
+end --for
+
+end --function</script>
+				<eventHandlerList />
+			</Script>
+		</ScriptGroup>
+	</ScriptPackage>
+</MudletPackage>
