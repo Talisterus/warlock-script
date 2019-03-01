@@ -45,6 +45,21 @@ send("mwypowiedz "..wszystkie_czary[token])
 				<packageName></packageName>
 				<regex>^czaruj (\d+)$</regex>
 			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>sprawdz konkretne zaklecie</name>
+				<script>local checked_spell = tostring(matches[2])
+
+for i =1, #wszystkie_czary do
+	--if wszystkie_czary[i] == checked_spell then
+	if string.match(wszystkie_czary[i], checked_spell) then
+	echo("["..i.."] mwypowiedz ".. wszystkie_czary[i].."\n")
+	end --if
+end --for
+</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^sprawdz (.+)$</regex>
+			</Alias>
 		</AliasGroup>
 	</AliasPackage>
 </MudletPackage>
