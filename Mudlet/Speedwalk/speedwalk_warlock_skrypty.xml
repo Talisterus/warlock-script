@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<ScriptPackage>
+		<ScriptGroup isActive="yes" isFolder="yes">
+			<name>speedwalk_warlock_skrypty</name>
+			<packageName></packageName>
+			<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+</script>
+			<eventHandlerList />
+			<Script isActive="yes" isFolder="no">
+				<name>speedwalk_warlock</name>
+				<packageName></packageName>
+				<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+function swap_directions_to_polish()
+for k, v in pairs(speedWalkDir) do
+	if v == "u" then
+	speedWalkDir[k] = "gora"
+	elseif v == "d" then
+	speedWalkDir[k] = "dol"
+	end --if
+	
+end --for
+end --func
+
+function speedwalk_warlock(id)
+  if global_concated_directions == nil then
+  global_concated_directions = ""
+  else global_concated_directions = ""
+  end --if
+local token = tostring(id)
+  if getPath(currentRoom.id, token) then
+  swap_directions_to_polish()
+  -- speedWalkDir should be already filled correctly
+  	for k, v in pairs(speedWalkDir)do
+		global_concated_directions = global_concated_directions .. ", " .. v
+		end --for
+  speedwalk(global_concated_directions, false, 0.1)
+	else
+	echo("\n speedwalk niemozliwy \n")
+  end --if
+end --func</script>
+				<eventHandlerList />
+			</Script>
+		</ScriptGroup>
+	</ScriptPackage>
+</MudletPackage>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<AliasPackage>
+		<AliasGroup isActive="yes" isFolder="yes">
+			<name>speedwalk_warlock_aliasy</name>
+			<script></script>
+			<command></command>
+			<packageName></packageName>
+			<regex></regex>
+			<Alias isActive="no" isFolder="no">
+				<name>sprawdzanie sciezki</name>
+				<script>local token = tostring(matches[2])
+if getPath(currentRoom.id, token) then
+echo("OK")
+end</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^spr_path (.+)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>wyszukiwanie pokojow po nazwie</name>
+				<script>local token = tostring(matches[2])
+display(searchRoom(token))</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^wyszukaj pokoj (.+)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>podaj id obecnego pokoju</name>
+				<script>echo(currentRoom.id)</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^podaj id pokoju$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>speedwalk_warlock</name>
+				<script>local token = tostring(matches[2])
+--speedwalk(token)
+--speedWalkDir
+
+
+speedwalk_warlock(token)</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^speedy (.+)$</regex>
+			</Alias>
+		</AliasGroup>
+	</AliasPackage>
+</MudletPackage>
