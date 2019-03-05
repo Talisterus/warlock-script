@@ -1,0 +1,4 @@
+Skrypt pozwala przemiescić się z jednej lokacji z okreslonym ID do drugiej z okreslonym ID.
+Pomocna może się okazać komenda 'wyszukaj pokoj [x]' gdzie x to nazwa lub część nazwy shorta z opisu lokacji.
+np. 'wyszukaj pokoj cukier' powinno zwrócić większość cukierni. Lista wyświetla ID tych znalezionych lokacji.
+Wpisując to ID komendą 'speedy ID' rozpoczyna się sekwencja speedwalka.
