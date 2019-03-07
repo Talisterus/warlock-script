@@ -1,0 +1,2 @@
+Skrypt po wpisaniu 'nalista' wczytuje listę najemników, następnie ją formatuje i nadaje każdemu wierszowi numer, który można użyć w komendzie
+'naprzywolaj numer'. Spowoduje to wezwanie najemnika o tym numerze.
