@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<AliasPackage>
+		<AliasGroup isActive="yes" isFolder="yes">
+			<name>najemnicy_aliasy</name>
+			<script></script>
+			<command></command>
+			<packageName></packageName>
+			<regex></regex>
+			<Alias isActive="yes" isFolder="no">
+				<name>nalista</name>
+				<script>merc_list = {}
+send("nalista")
+echo("\n Wczytuje liste najemnikow \n")
+tempTimer(2, function() display_list(merc_list) end)</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^nalista$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>test</name>
+				<script>display_list(merc_list)</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^test_list$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>naprzywolaj</name>
+				<script>local token = tostring(matches[2])
+if string.match(token, "[0-9]+") then
+call_merc(token)
+else
+send("naprzywolaj " .. matches[2])
+end --if</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^naprzywolaj (.+)$</regex>
+			</Alias>
+		</AliasGroup>
+	</AliasPackage>
+</MudletPackage>
