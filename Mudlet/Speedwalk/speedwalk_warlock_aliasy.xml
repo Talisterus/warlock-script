@@ -3,47 +3,40 @@
 <MudletPackage version="1.001">
 	<AliasPackage>
 		<AliasGroup isActive="yes" isFolder="yes">
-			<name>speedwalk_warlock_aliasy</name>
+			<name>najemnicy_aliasy</name>
 			<script></script>
 			<command></command>
 			<packageName></packageName>
 			<regex></regex>
-			<Alias isActive="no" isFolder="no">
-				<name>sprawdzanie sciezki</name>
-				<script>local token = tostring(matches[2])
-if getPath(currentRoom.id, token) then
-echo("OK")
-end</script>
+			<Alias isActive="yes" isFolder="no">
+				<name>nalista</name>
+				<script>merc_list = {}
+send("nalista")
+echo("\n Wczytuje liste najemnikow \n")
+tempTimer(2, function() display_list(merc_list) end)</script>
 				<command></command>
 				<packageName></packageName>
-				<regex>^spr_path (.+)$</regex>
+				<regex>^nalista$</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
-				<name>wyszukiwanie pokojow po nazwie</name>
-				<script>local token = tostring(matches[2])
-display(searchRoom(token))</script>
+				<name>wyswietl liste bajemnikow</name>
+				<script>display_list(merc_list)</script>
 				<command></command>
 				<packageName></packageName>
-				<regex>^wyszukaj pokoj (.+)$</regex>
+				<regex>^wyswietl liste najemnikow$</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
-				<name>podaj id obecnego pokoju</name>
-				<script>echo(currentRoom.id)</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^podaj id pokoju$</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>speedwalk_warlock</name>
+				<name>naprzywolaj</name>
 				<script>local token = tostring(matches[2])
---speedwalk(token)
---speedWalkDir
-
-
-speedwalk_warlock(token)</script>
+if string.match(token, "[0-9]+") then
+token = tonumber(token)
+call_merc(token)
+else
+send("naprzywolaj " .. matches[2])
+end --if</script>
 				<command></command>
 				<packageName></packageName>
-				<regex>^speedy (.+)$</regex>
+				<regex>^naprzywolaj (.+)$</regex>
 			</Alias>
 		</AliasGroup>
 	</AliasPackage>
