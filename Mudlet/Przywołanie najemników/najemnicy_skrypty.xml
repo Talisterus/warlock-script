@@ -2,20 +2,10 @@
 <!DOCTYPE MudletPackage>
 <MudletPackage version="1.001">
 	<ScriptPackage>
-		<ScriptGroup isActive="yes" isFolder="yes">
-			<name>najemnicy_skrypty</name>
+		<Script isActive="yes" isFolder="no">
+			<name>najemnicy</name>
 			<packageName></packageName>
 			<script>-------------------------------------------------
---         Put your Lua functions here.        --
---                                             --
--- Note that you can also use external Scripts --
--------------------------------------------------
-</script>
-			<eventHandlerList />
-			<Script isActive="yes" isFolder="no">
-				<name>najemnicy</name>
-				<packageName></packageName>
-				<script>-------------------------------------------------
 --         Put your Lua functions here.        --
 --                                             --
 -- Note that you can also use external Scripts --
@@ -40,10 +30,10 @@ end --if
 end --func
 
 function call_merc(number)
-local token = merc_list[10]
+local num = tonumber(number)
+local token = merc_list[num]
 local token2 = token[1]
 token2 = token2:gsub("%s+", "")
-echo(token2)
 		if token2:sub(-1) == "a" then
 			token2 = token2:sub(1, -2).."e"
 			send("naprzywolaj "..token2)
@@ -51,8 +41,7 @@ echo(token2)
 			send("naprzywolaj " .. token2.."a")
 		end --if
 end --func</script>
-				<eventHandlerList />
-			</Script>
-		</ScriptGroup>
+			<eventHandlerList />
+		</Script>
 	</ScriptPackage>
 </MudletPackage>
