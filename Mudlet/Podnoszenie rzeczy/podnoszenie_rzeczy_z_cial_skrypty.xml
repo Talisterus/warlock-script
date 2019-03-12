@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<ScriptPackage>
+		<ScriptGroup isActive="yes" isFolder="yes">
+			<name>podnoszenie_rzeczy_z_cial_skrypty</name>
+			<packageName></packageName>
+			<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+</script>
+			<eventHandlerList />
+			<Script isActive="yes" isFolder="no">
+				<name>wez_rzecz_z_listy</name>
+				<packageName></packageName>
+				<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+enemy_with_stones = {
+"minotaura",
+"ogryliona",
+"gnolla",
+"karla"
+}
+
+enemy_with_chests = {
+"ryboczleka",
+"topielca"
+}
+
+enemy_with_coins = {
+"ryboczleka",
+"topielca"
+}
+
+enemy_with_everything = {
+"hobgoblina"
+}
+
+objects_to_put_back = {
+"granit",
+"piaskowiec"
+}
+
+function is_in_list(target, list_name)
+	for i = 1, #list_name do
+	if string.match(target, list_name[i]) then
+ 		return true
+	end --if
+end --for
+	
+end --func
+
+function get_object_from_body(target)
+	if is_in_list(target, enemy_with_stones) then
+		send("wez kamienie z ciala")
+	end --if
+	if is_in_list(target, enemy_with_chests) then
+		send("wez skrzynki z ciala")
+	end --if
+	if is_in_list(target, enemy_with_coins) then
+		send("wez monety z ciala")
+	end --if
+	if is_in_list(target, enemy_with_everything) then
+		send("wez wszystko z ciala")
+	end --if
+end --func</script>
+				<eventHandlerList />
+			</Script>
+		</ScriptGroup>
+	</ScriptPackage>
+</MudletPackage>
