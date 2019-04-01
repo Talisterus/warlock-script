@@ -1,0 +1,2 @@
+Skrypt liczący ile upłynęło czasu od wycastowania zaklęcia do jego zakończenia.
+Zasadniczo działá na podtsawie skryptu i triggerów. Jeżeli trigger nie może podać argumentu bo na przykład w jego skład może wejść jakas zmienna to skrypt porówna zawartość argumentu z tabelą jaką wcześniej przygotowaliśmy w skrypcie.
