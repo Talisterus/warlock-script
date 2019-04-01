@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<ScriptPackage>
+		<ScriptGroup isActive="yes" isFolder="yes">
+			<name>magicDurationTimesScripts</name>
+			<packageName></packageName>
+			<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+</script>
+			<eventHandlerList />
+			<Script isActive="yes" isFolder="no">
+				<name>magicDurationTimesScript</name>
+				<packageName></packageName>
+				<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+magicSpellsDescriptionsStarted =
+  {
+    ["bycza sila"] =
+      "Karmazynowa aura ogarnia twoje cialo na krotka chwile, po czym blyska i rozplywa sie w nicosc, pozostawiajac nabrzmiale miesnie i uczucie nieludzkiej sily.",
+    ["zimny plomien"] = "zachodzi zimnym ogniem.",
+    ["cienie"] = "Za pomoca swej woli siegasz poza materialny swiat.",
+    ["kosciany wir"] =
+      "Spod twoich stop wylaniaja sie trupy, ktorych kosci stopniowo wzlatuja, tworzac wokol ciebie kosciany wir.",
+  }
+magicSpellsDescriptionsStopped =
+  {
+    ["bycza sila"] = "Twoje miesnie miekna. Czujesz sie slabszy.",
+    ["zimny plomien"] = "Zimne ognie pokrywajace twoj plomienisty poreczny miecz gasna.",
+    ["cienie"] =
+      "Okolice nawiedzaja jeki i szepty umarlych, na chwile temperatura otoczenia spada na tyle, aby sformowalo sie kilka strzepkow sinej mgly.",
+    ["kosciany wir"] =
+      "Czaszki przeplatajace sie w otaczajacym cie wirze wydaja z siebie okropny wrzask i gina bez sladu, rozplywajac sie w powietrzu.",
+  }
+
+function magicEffectDurationTime(input_line)
+  local input_line = tostring(input_line)
+  vars = vars or {}
+  local durationTime = ""
+  for k, v in pairs(magicSpellsDescriptionsStarted) do
+    vars["magicAbilityDurationTime" .. k] =
+      vars["magicAbilityDurationTime" .. k] or createStopWatch()
+  end
+  --for
+  for k, v in pairs(magicSpellsDescriptionsStarted) do
+    if string.match(input_line, v) then
+      startStopWatch(vars["magicAbilityDurationTime" .. k])
+      echo("\nStoper start\n")
+      --echo(vars["magicAbilityDurationTime" .. k])
+    end
+    --if
+  end
+  --for
+  for k, v in pairs(magicSpellsDescriptionsStopped) do
+    if string.match(input_line, v) then
+      --echo(stopStopWatch(stoperName))
+      durationTime = stopStopWatch(vars["magicAbilityDurationTime" .. k])
+      echo("\nCzas trwania efektu czaru " .. k .. " wyniosl " .. durationTime .. " sekund\n")
+      echo("Jest to " .. durationTime / 60 .. " minut\n")
+      stopStopWatch(vars["magicAbilityDurationTime" .. k])
+      resetStopWatch(vars["magicAbilityDurationTime" .. k])
+    end
+    -- if
+  end
+  --for
+end
+
+--func</script>
+				<eventHandlerList />
+			</Script>
+		</ScriptGroup>
+	</ScriptPackage>
+</MudletPackage>
