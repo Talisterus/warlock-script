@@ -1,0 +1,9 @@
+Skrypt pozwala wyszukac w pamięci jakie produkty znajdują się w jakiej karczmie albo u jakiego kowala i zwraca ID pokoju w jakim się dany sprzedawca znajduje.
+Oczywiście najpierw trzeba do danego sprzedawcy zajrzeć i 'przeczytać tabliczkę'. Dzięki skryptowi powinno stać się to automatyczne.
+Komendy pomocne w obsłudze:
+
+wyszukaj produkt [produkt]
+-Wyszukuje produkt o nazwie [produkt] i zwraca ID pokoju w jakim się owy znajduje
+
+sprawdz menu tutaj
+Jeśli chcemy zobaczyć co można kupić na aktualnie zajmowanej lokacji używamy tej komendy
