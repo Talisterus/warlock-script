@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<AliasPackage>
+		<AliasGroup isActive="yes" isFolder="yes">
+			<name>AddInfoToMapAliases</name>
+			<script></script>
+			<command></command>
+			<packageName></packageName>
+			<regex></regex>
+			<Alias isActive="yes" isFolder="no">
+				<name>testZapisuDoDanychMapy</name>
+				<script>display(getAllRoomUserData(currentRoom.id))</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^sprawdz menu tutaj$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>wyszukaj produkt z listy mapy</name>
+				<script>local token = tostring(matches[2])
+--display(searchRoomUserData())
+local productsKeys = searchRoomUserData()
+--display(productsKeys)
+--display(searchRoomUserData())
+local searchedProduct
+for k, v in pairs(productsKeys) do
+  if string.match(v:lower(), token) then
+    echo(v)
+    echo(" = ")
+    echo(searchRoomUserData(tostring(v))[1] .. "\n")
+  end
+  --if
+end
+--for
+--readInfoAboutFoodInThisRoom()</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^wyszukaj produkt (.+)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>skasuj produkt z listy zywnosci</name>
+				<script>local match = tostring(matches[2])
+clearRoomUserDataItem(currentRoom.id, match)</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^skasuj produkt (.+)$</regex>
+			</Alias>
+		</AliasGroup>
+	</AliasPackage>
+</MudletPackage>

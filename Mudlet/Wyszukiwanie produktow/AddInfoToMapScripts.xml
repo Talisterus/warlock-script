@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<ScriptPackage>
+		<ScriptGroup isActive="yes" isFolder="yes">
+			<name>AddInfoToMapScripts</name>
+			<packageName></packageName>
+			<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+</script>
+			<eventHandlerList />
+			<Script isActive="yes" isFolder="no">
+				<name>storeInfoAboutFoodInThisRoom</name>
+				<packageName></packageName>
+				<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+
+function storeInfoAboutFoodInThisRoom(match)
+  match = tostring(match)
+  match = match:gsub("%s+", " ")
+  local tokenTable = getAllRoomUserData(currentRoom.id)
+  local tableLength = table.size(tokenTable)
+  local tableLength = tostring(tableLength)
+  --echo(tableLength)
+  if table.contains(tokenTable, match) then
+    --echo("\nJuż zapisano w danych mapy\n")
+  else
+    setRoomUserData(currentRoom.id, match, currentRoom.id)
+  end
+  --if
+end
+
+--func
+
+function storeInfoAboutItemsInThisRoom(match)
+  storeInfoAboutFoodInThisRoom(match)
+end
+
+--func
+
+function readInfoAboutFoodInThisRoom()
+  display(getAllRoomUserData(currentRoom.id))
+  --display(getAllMapUserData())
+end
+
+--func</script>
+				<eventHandlerList />
+			</Script>
+			<ScriptGroup isActive="yes" isFolder="yes">
+				<name>gmcp.Room.Glance</name>
+				<packageName></packageName>
+				<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+</script>
+				<eventHandlerList />
+				<Script isActive="yes" isFolder="no">
+					<name>Room glance</name>
+					<packageName></packageName>
+					<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+
+function gmcp_Room_Glance(event)
+  --display(gmcp.Room)
+  if (gmcp.Room.Glance == nil) then
+    return
+  end
+  --gmcp.Room.Glance = nil
+  --display(gmcp)
+  if gmcp.Room.Glance.usluga == 7 or gmcp.Room.Glance.usluga == 2 then
+    send("przeczytaj tabliczke")
+  end
+end</script>
+					<eventHandlerList>
+						<string>gmcp.Room.Glance</string>
+					</eventHandlerList>
+				</Script>
+			</ScriptGroup>
+		</ScriptGroup>
+	</ScriptPackage>
+</MudletPackage>
