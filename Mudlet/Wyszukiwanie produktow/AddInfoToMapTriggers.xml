@@ -36,9 +36,9 @@ storeInfoAboutFoodInThisRoom(match)</script>
 					<string>^(.+)(\d+) (miedziakow|miedziaki)(.+)$</string>
 					<string>^(.+)(\d+) (miedziakow|miedziaki)$</string>
 					<string>^\|(.+) (\d+) (miedziakow|miedziaki)\|(.+)$</string>
-					<string>^(?!(Dostajesz|Placisz|Chowasz|Wyjmujesz|Wyciagasz))(.+)za(.+)(\d+) (miedzian|srebrn)(ych|e|a) (monet|monety|monete)(.+)$</string>
-					<string>^(?!(Dostajesz|Placisz|Chowasz|Wyjmujesz|Wyciagasz))(.+)(\d+) (miedzian|srebrn)(ych|e|a) (monet|monety|monete)(.+)$</string>
-					<string>^(?!(Dostajesz|Placisz|Chowasz|Wyjmujesz|Wyciagasz))(.+)(\d+) (miedzian|srebrn)(ych|e|a) (monet|monety|monete)$</string>
+					<string>^(?!(Dostajesz|Placisz|Chowasz|Wyjmujesz|Wyciagasz))(.+?!zawiera) za (\d+) (miedzian|srebrn)(ych|e|a) (monet|monety|monete)(.+)$</string>
+					<string>^(?!(Dostajesz|Placisz|Chowasz|Wyjmujesz|Wyciagasz))(.+?!zawiera)(\d+) (miedzian|srebrn)(ych|e|a) (monet|monety|monete)(.+)$</string>
+					<string>^(?!(Dostajesz|Placisz|Chowasz|Wyjmujesz|Wyciagasz))(.+?!zawiera)(\d+) (miedzian|srebrn)(ych|e|a) (monet|monety|monete)$</string>
 				</regexCodeList>
 				<regexCodePropertyList>
 					<integer>1</integer>
